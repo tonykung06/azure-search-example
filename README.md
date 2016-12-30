@@ -190,3 +190,10 @@
 	"select": "id, name",
 	"count": true
 }' "https://tonykung-asdemo-hk-dev.search.windows.net/indexes/beers/docs/search?api-version=2015-02-28"`
+
+### Filtering, this is applied after matching docs are found
+- `curl -X POST -H "api-key: 0E6B95048C237F5E8849DE99C6E9C904" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -H "Postman-Token: 07602fa9-dbbd-6ff1-a7d0-e17002991705" -d '{
+	"search": "*",
+	"filter": "ibu lt 30.0",
+	"select": "id, name"
+}' "https://tonykung-asdemo-hk-dev.search.windows.net/indexes/beers/docs/search?api-version=2015-02-28"`
